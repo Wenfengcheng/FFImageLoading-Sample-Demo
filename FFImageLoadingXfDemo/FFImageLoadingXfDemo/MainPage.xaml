@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+            xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+            x:Class="FFImageLoadingXfDemo.MainPage">
+
+    <ContentPage Title="Rounded">
+        <forms:CachedImage Source="tiger.jpg">
+            <forms:CachedImage.Transformations>
+                <transformations:RoundedTransformation Radius="240" />
+            </forms:CachedImage.Transformations>
+        </forms:CachedImage>
+    </ContentPage>
+    <ContentPage Title="Blurred">
+        <forms:CachedImage Source="tiger.jpg">
+            <forms:CachedImage.Transformations>
+                <transformations:BlurredTransformation Radius="240" />
+            </forms:CachedImage.Transformations>
+        </forms:CachedImage>
+    </ContentPage>
+    <ContentPage Title="Black n White">
+        <forms:CachedImage Source="tiger.jpg">
+            <forms:CachedImage.Transformations>
+                <transformations:GrayscaleTransformation />
+            </forms:CachedImage.Transformations>
+        </forms:CachedImage>
+    </ContentPage>
+    <ContentPage Title="With Placeholder">
+        <forms:CachedImage LoadingPlaceholder="http://via.placeholder.com/400x200" Source="http://lorempixel.com/400/200/sports" />
+    </ContentPage>
+    <ContentPage Title="Retry Download">
+        <forms:CachedImage Source="http://lorempixel.com/400/200/sports" RetryCount="3" />
+    </ContentPage>
+</TabbedPage>
